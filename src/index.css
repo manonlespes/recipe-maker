@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #141413;
+  font-size: 16px;
+  background-color: #fafaf8;
+  font-family: Inter;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+
+  padding: 1.5em 1em;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  font-size: 2em;
+
+  font-weight: normal;
+}
+
+section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4em;
+}
+
+/* Input */
+
+.form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+input {
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 450px;
+  height: 3.3em;
+  padding: 0.8em 0.5em;
+  border-radius: 0.37em;
+
+  border: 2px solid #d1d5db;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: #6b7280;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: 2px solid #6b7280;
+  outline-offset: 2px;
+}
+
+button {
+  padding: 0.8em 2.1em;
+  border-radius: 0.37em;
+  background-color: #141413;
+  border: none;
+
+  font-size: 1em;
+  color: white;
+  text-transform: capitalize;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  button {
+    align-self: end;
+  }
+}
+
+button:hover,
+button:focus {
+  background-color: #373736;
+  outline: 2px solid #6b7280;
+  outline-offset: 2px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+/*@media only screen and (max-width: 600px) {} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/*@media only screen and (min-width: 768px) {} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*@media only screen and (min-width: 1200px) {} */
