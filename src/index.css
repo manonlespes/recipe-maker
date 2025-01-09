@@ -25,12 +25,16 @@ header {
 
 h1 {
   font-size: 2em;
+  font-weight: normal;
+}
 
+h2 {
+  margin-top: 35px;
+  font-size: 1.5em;
   font-weight: normal;
 }
 
 section {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 4em;
 }
@@ -55,7 +59,6 @@ label {
 
 input {
   flex-grow: 1;
-  min-width: 300px;
   max-width: 450px;
   height: 3.3em;
   padding: 0.8em 0.5em;
@@ -73,7 +76,7 @@ input:focus {
   outline-offset: 2px;
 }
 
-button {
+.submit-btn {
   padding: 0.8em 2.1em;
   border-radius: 0.37em;
   background-color: #141413;
@@ -87,17 +90,46 @@ button {
   cursor: pointer;
 }
 
+ul.ingredients-list > li {
+  color: #475467;
+  line-height: 28px;
+}
+
 @media (min-width: 769px) {
-  button {
+  .submit-btn {
     align-self: end;
   }
 }
 
-button:hover,
-button:focus {
+.submit-btn:hover,
+.submit-btn:focus {
   background-color: #373736;
   outline: 2px solid #6b7280;
   outline-offset: 2px;
+}
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+
+  border-radius: 8px;
+  background: #f0efeb;
+
+  padding: 10px 28px;
+}
+
+.get-recipe-btn {
+  border: none;
+  border-radius: 6px;
+
+  background: #d17557;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  padding: 9px 17px;
+
+  color: #fafaf8;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  cursor: pointer;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -106,16 +138,44 @@ button:focus {
     flex-direction: column;
     align-items: center;
   }
+
+  .get-recipe-container {
+    flex-direction: column;
+  }
+
+  .get-recipe-btn {
+    width: fit-content;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
 /*@media only screen and (max-width: 600px) {} */
 
 /* Medium devices (landscape tablets, 768px and up) */
-/*@media only screen and (min-width: 768px) {} */
+@media only screen and (min-width: 768px) {
+  section {
+    max-width: 900px;
+  }
+
+  input {
+    min-width: 300px;
+  }
+
+  .get-recipe-container {
+    align-items: center;
+  }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
-/*@media only screen and (min-width: 992px) {} */
+@media only screen and (min-width: 992px) {
+  section {
+    max-width: 1080px;
+  }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-/*@media only screen and (min-width: 1200px) {} */
+@media only screen and (min-width: 1200px) {
+  section {
+    max-width: 1200px;
+  }
+}

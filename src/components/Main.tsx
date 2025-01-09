@@ -34,9 +34,26 @@ export const Main = () => {
               />
             </div>
 
-            <button type="submit">+ add ingredient</button>
+            <button className="submit-btn">+ add ingredient</button>
           </form>
-          <ul>{ingredientList}</ul>
+
+          {ingredients?.length && (
+            <>
+              <h2>Ingredients on hand:</h2>
+              <ul className="ingredients-list" aria-live="polite">
+                {ingredientList}
+              </ul>
+              {ingredients?.length > 3 && (
+                <div className="get-recipe-container">
+                  <div>
+                    <h3>Ready for a recipe?</h3>
+                    <p>Generate a recipe from your list of ingredients.</p>
+                  </div>
+                  <button className="get-recipe-btn">Get a recipe</button>
+                </div>
+              )}
+            </>
+          )}
         </section>
       </main>
     </>
