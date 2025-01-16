@@ -1,11 +1,9 @@
 import { useState } from "react";
+import IngredientList from "./IngredientsList";
 
-export const Main = () => {
+const Main = () => {
   const [ingredients, setIngredients] = useState<string[] | null>([]);
-
-  const ingredientList = ingredients?.map((ingredient) => {
-    return <li key={ingredient}>{ingredient}</li>;
-  });
+  const [recipe, setRecipe] = useState<boolean>(false);
 
   const addIngredient = (formData: FormData) => {
     const newIngredient = formData.get("ingredient");
@@ -15,6 +13,10 @@ export const Main = () => {
         return [...(prevState as any), newIngredient];
       });
     }
+  };
+
+  const showRecipe = () => {
+    setRecipe((prevState) => !prevState);
   };
 
   return (
@@ -37,25 +39,18 @@ export const Main = () => {
             <button className="submit-btn">+ add ingredient</button>
           </form>
 
-          {ingredients?.length && (
-            <>
-              <h2>Ingredients on hand:</h2>
-              <ul className="ingredients-list" aria-live="polite">
-                {ingredientList}
-              </ul>
-              {ingredients?.length > 3 && (
-                <div className="get-recipe-container">
-                  <div>
-                    <h3>Ready for a recipe?</h3>
-                    <p>Generate a recipe from your list of ingredients.</p>
-                  </div>
-                  <button className="get-recipe-btn">Get a recipe</button>
-                </div>
-              )}
-            </>
-          )}
+          {ingredients?.length ? (
+            <IngredientList
+              ingredients={ingredients}
+              handleShowRecipe={showRecipe}
+            />
+          ) : null}
+
+          {recipe && <div>Recipe goes here</div>}
         </section>
       </main>
     </>
   );
 };
+
+export default Main;

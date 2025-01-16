@@ -1,4 +1,4 @@
-export const ChefClaudeIcon = () => {
+const ChefClaudeIcon = () => {
   return (
     <>
       <svg
@@ -33,3 +33,5 @@ export const ChefClaudeIcon = () => {
     </>
   );
 };
+
+export default ChefClaudeIcon;

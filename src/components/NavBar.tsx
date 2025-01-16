@@ -1,6 +1,6 @@
-import { ChefClaudeIcon } from "./Icons";
+import ChefClaudeIcon from "./Icons";
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <>
       <header>
@@ -10,3 +10,5 @@ export const NavBar = () => {
     </>
   );
 };
+
+export default NavBar;
